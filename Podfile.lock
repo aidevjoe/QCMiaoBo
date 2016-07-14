@@ -1,0 +1,62 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - BarrageRenderer (1.8.1)
+  - CocoaAsyncSocket (7.4.3):
+    - CocoaAsyncSocket/All (= 7.4.3)
+  - CocoaAsyncSocket/All (7.4.3):
+    - CocoaAsyncSocket/GCD
+    - CocoaAsyncSocket/RunLoop
+  - CocoaAsyncSocket/GCD (7.4.3)
+  - CocoaAsyncSocket/RunLoop (7.4.3)
+  - LFLiveKit (1.6.4):
+    - CocoaAsyncSocket (~> 7.4.1)
+    - LMGPUImage (~> 0.1.9)
+    - pili-librtmp (~> 1.0.2)
+  - LMGPUImage (0.1.9)
+  - MBProgressHUD (0.9.2)
+  - MJRefresh (3.1.10)
+  - pili-librtmp (1.0.3)
+  - PureLayout (3.0.2)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - BarrageRenderer (~> 1.8.0)
+  - LFLiveKit (~> 1.6)
+  - MBProgressHUD (~> 0.9.2)
+  - MJRefresh (~> 3.1.1)
+  - PureLayout
+  - SDWebImage (~> 3.8.1)
+  - YYModel
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BarrageRenderer: a5dc2c9d38028be819b64ed2b7dfa240490b378a
+  CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
+  LFLiveKit: 9de097e6341843bedfd523eb2154259ee51539e7
+  LMGPUImage: 8e2e5d0f7065953eb7812de842db4c87d59abf09
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJRefresh: bb72948c985914b0b5cecac573a2c69a8915fb02
+  pili-librtmp: 50faa17413c635cca5ceccb1a8f9f6acc6587a45
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+COCOAPODS: 0.39.0
