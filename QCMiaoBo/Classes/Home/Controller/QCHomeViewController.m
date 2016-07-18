@@ -7,83 +7,78 @@
 //
 
 #import "QCHomeViewController.h"
-#import "MHNetworkManager.h"
-#import "YYModel.h"
-#import "QCAnchor.h"
-#import "QCHomeAnchorCell.h"
-#import "QCWatchLiveViewController.h"
+#import "QCHotViewController.h"
+#import "QCSliderView.h"
+#import "QCNewViewController.h"
+#import "QCFollowViewController.h"
+#import "QCUtilsMacro.h"
 
-@interface QCHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
+@interface QCHomeViewController () <UIScrollViewDelegate>
 
-@property (nonatomic, strong) NSArray *anchorData;
+@property (nonatomic, strong) QCSliderView *sliderView;
+
+@property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, strong) NSArray *childVc;
 
 @end
 
 @implementation QCHomeViewController
 
-#pragma mark lazy loading...
 
-- (UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 400;
-        [self.view addSubview:_tableView];
+#pragma mark - lazy loading...
+
+- (NSArray *)childVc{
+    if (!_childVc) {
+        _childVc = @[@"QCHotViewController", @"QCNewViewController", @"QCFollowViewController"];
     }
-    return _tableView;
+    return _childVc;
 }
 
-- (NSArray *)anchorData{
-    if (!_anchorData) {
-        _anchorData = [NSArray array];
+- (UIScrollView *)scrollView{
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+        _scrollView.contentSize = CGSizeMake(ScreenWidth * self.childVc.count, 0);
+        _scrollView.pagingEnabled = YES;
+        _scrollView.bounces = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.delegate = self;
+        [self.view addSubview:_scrollView];
     }
-    return _anchorData;
+    return _scrollView;
 }
 
+- (QCSliderView *)sliderView{
+    if (!_sliderView) {
+        _sliderView = [QCSliderView sliderViewWithTitles:@[@"最热", @"最新", @"关注"]];
+    }
+    return _sliderView;
+}
 
-#pragma mark life cycle
+#pragma mark - life cycle...
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    [self tableView];
+    [self.navigationItem setTitleView:self.sliderView];
     
-    [MHNetworkManager getRequstWithURL:@"http://live.9158.com/Fans/GetHotLive?page=1" params:nil successBlock:^(id returnData, int code, NSString *msg) {
-        
-        NSMutableArray *dataArr = [NSMutableArray array];
-        for (NSDictionary *dict in returnData[@"data"][@"list"]) {
-            [dataArr addObject:[QCAnchor yy_modelWithJSON:dict]];
-        }
-        self.anchorData = dataArr;
-        [self.tableView reloadData];
-    } failureBlock:^(NSError *error) {
-        NSLog(@"%@", error);
-
-    } showHUD:YES];
-
+    //添加子视图
+    [self initChildController];
 }
 
 
-#pragma mark TableViewDelegate && TableViewDataSource
+#pragma mark - custom action
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    QCHomeAnchorCell *cell = [QCHomeAnchorCell cellWithTableView:tableView];
-    if (self.anchorData.count) {
-        cell.anchor = self.anchorData[indexPath.row];
+- (void)initChildController{
+    for (int i = 0; i < self.childVc.count; i ++) {
+        UIViewController *vc = [[NSClassFromString(self.childVc[i]) alloc] init];
+        vc.view.frame = CGRectMake(ScreenWidth * i, 0, ScreenWidth, ScreenHeight);
+        [self.scrollView addSubview:vc.view];
+        [self addChildViewController:vc];
     }
-    return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    QCWatchLiveViewController *wlVC = [[QCWatchLiveViewController alloc] init];
-    wlVC.anchor = self.anchorData[indexPath.row];
-    [self.navigationController pushViewController:wlVC animated:YES];
-}
 
 @end

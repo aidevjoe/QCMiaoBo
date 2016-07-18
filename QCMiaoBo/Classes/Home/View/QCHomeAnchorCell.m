@@ -31,6 +31,7 @@
     if (!cell) {
         cell = [[QCHomeAnchorCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:[self description]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return cell;
 }
@@ -45,6 +46,10 @@
 
 - (void)setup{
     self.iconImageV = [[UIImageView alloc] init];
+    self.iconImageV.layer.masksToBounds = YES;
+    self.iconImageV.layer.cornerRadius = 20;
+    self.iconImageV.layer.borderColor = KeyColor.CGColor;
+    self.iconImageV.layer.borderWidth = 1;
     [self.contentView addSubview:self.iconImageV];
     
     self.nicknameLabel = [UILabel new];
@@ -73,9 +78,13 @@
     [self.liveTagView sizeToFit];
     [self.contentView addSubview:self.liveTagView];
     
+    UIView *intervalView = [UIView new];
+    intervalView.backgroundColor = gbColor;
+    [self.contentView addSubview:intervalView];
+    
     [self.iconImageV autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5];
     [self.iconImageV autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:5];
-    [self.iconImageV autoSetDimensionsToSize:CGSizeMake(35, 35)];
+    [self.iconImageV autoSetDimensionsToSize:CGSizeMake(40, 40)];
     
     [self.nicknameLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.iconImageV withOffset:2];
     [self.nicknameLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.iconImageV withOffset:5];
@@ -94,10 +103,15 @@
     [self.bigpicImage autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.iconImageV withOffset:6];
     [self.bigpicImage autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [self.bigpicImage autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [self.bigpicImage autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [self.bigpicImage autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:intervalView];
     
     [self.liveTagView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.bigpicImage withOffset:8];
     [self.liveTagView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:self.bigpicImage withOffset:-5];
+    
+    [intervalView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [intervalView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [intervalView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [intervalView autoSetDimension:ALDimensionHeight toSize:10];
 }
 
 - (void)setAnchor:(QCAnchor *)anchor{
@@ -122,5 +136,4 @@
     
     [self.bigpicImage sd_setImageWithURL:[NSURL URLWithString:anchor.bigpic] placeholderImage:[UIImage imageNamed:@"profile_user_414x414"]];
 }
-
 @end

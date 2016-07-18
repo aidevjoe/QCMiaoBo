@@ -5,6 +5,8 @@
 //  Created by Joe on 16/7/14.
 //  Copyright © 2016年 Joe. All rights reserved.
 //
+#import "UIView+Extend.h"
+
 
 #ifndef QCUtilsMacro_h
 #define QCUtilsMacro_h
@@ -43,10 +45,11 @@
 // 颜色(RGB)
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define RGBACOLOR(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define RGBCOLOR(r, g, b) RGBACOLOR(r, g, b, 1.0)
 
 //颜色(Hex)
-#define HexColor(color) [NLUtility colorWithHexString:(color)]
-#define HexColorAndAlpha(color, alp) [NLUtility colorWithHexString:(color) alpha:(alp)]
+#define HexColor(color) [QCTools colorWithHexString:(color)]
+#define HexColorAndAlpha(color, alp) [QCTools colorWithHexString:(color) alpha:(alp)]
 
 //宏定义检测block是否可用
 #define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
@@ -56,6 +59,9 @@
 
 //颜色
 //全局颜色
-#define KeyColor RGBACOLOR(216, 41, 116, 1.0)
+#define KeyColor RGBCOLOR(216, 41, 116)
+//背景色
+#define gbColor UIColorFromRGB(0xF6F2F4)
+
 
 #endif /* QCUtilsMacro_h */
