@@ -64,6 +64,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "LMGPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "LMGPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "XRCarouselView/XRCarouselView/XRPlaceholder.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "LMGPUImage/framework/Resources/lookup.png"
@@ -72,6 +73,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "LMGPUImage/framework/Resources/lookup_soft_elegance_1.png"
   install_resource "LMGPUImage/framework/Resources/lookup_soft_elegance_2.png"
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "XRCarouselView/XRCarouselView/XRPlaceholder.png"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

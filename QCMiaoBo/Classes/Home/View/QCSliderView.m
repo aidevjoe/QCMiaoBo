@@ -11,40 +11,72 @@
 
 @interface QCSliderView ()
 
-@property (nonatomic, strong) UIView *lineV;
+
+@property (nonatomic, strong) UIButton *selectedBtn;
 
 @end
 
 @implementation QCSliderView
 
 
-
-+ (QCSliderView *)sliderViewWithTitles:(NSArray *)titles{
-    
-    QCSliderView *sliderView = [[QCSliderView alloc] init];
-    sliderView.frame = CGRectMake(0, 0, 200, 40);
-
-    CGFloat btnW = sliderView.width * 0.33;
-    CGFloat btnH = sliderView.height;
-    CGFloat btnX = 0;
-    for (int i = 0; i < titles.count; i ++) {
-        UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [titleBtn setTitle:titles[i] forState:UIControlStateNormal];
-        btnX = i * btnW;
-        titleBtn.frame = CGRectMake(btnX, 0, btnW, btnH);
-        [sliderView addSubview:titleBtn];
-        
-        if (i == 0) {
-            UIView *lineV = [UIView new];
-            lineV.frame = CGRectMake(0, btnH, 30, 2);
-            lineV.backgroundColor = [UIColor whiteColor];
-            [sliderView addSubview:lineV];
-            sliderView.lineV = lineV;
+- (QCSliderView *)initWithFrame:(CGRect)frame titles:(NSArray *)titles{
+    if (self = [super initWithFrame:frame]) {
+        self.tag = 111;
+        self.frame = CGRectMake(0, 0, 200, 38);
+        CGFloat btnW = self.width * 0.33;
+        CGFloat btnH = self.height;
+        CGFloat btnX = 0;
+        for (int i = 0; i < titles.count; i ++) {
+            UIButton *titleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [titleBtn setTitle:titles[i] forState:UIControlStateNormal];
+            [titleBtn setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.6] forState:UIControlStateNormal];
+            [titleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+            titleBtn.tag = i;
+            btnX = i * btnW;
+            titleBtn.frame = CGRectMake(btnX, 0, btnW, btnH);
+            [titleBtn addTarget:self action:@selector(clickTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:titleBtn];
+            
+            if (i == 0) {
+                titleBtn.selected = YES;
+                self.selectedBtn = titleBtn;
+                
+                UIView *lineV = [UIView new];
+                [titleBtn.titleLabel sizeToFit];
+                lineV.frame = CGRectMake(0, 36, titleBtn.titleLabel.width + 10, 2);
+                lineV.centerX = titleBtn.centerX;
+                lineV.backgroundColor = [UIColor whiteColor];
+                [self addSubview:lineV];
+                self.lineV = lineV;
+            }
         }
     }
-    
-    return sliderView;
+    return self;
 }
 
++ (QCSliderView *)sliderViewWithTitles:(NSArray *)titles{
+    return [[QCSliderView alloc] initWithFrame:CGRectZero titles:titles];
+}
 
+- (void)clickTitleBtn:(UIButton *)btn{
+    if (btn == self.selectedBtn) return;
+    
+    !self.didSelectedTitleBtn ? : self.didSelectedTitleBtn(btn.tag);
+    
+//    [self setSelectedBtnWithIndex:btn.tag];
+}
+
+- (void)setSelectedBtnWithIndex:(NSInteger)index{
+    UIButton *btn = [self viewWithTag:index];
+    
+//    [UIView animateWithDuration:.25 animations:^{
+//        self.lineV.centerX = btn.centerX;
+//    }];
+    
+    self.selectedBtn.selected = NO;
+    
+    btn.selected = YES;
+    
+    self.selectedBtn = btn;
+}
 @end

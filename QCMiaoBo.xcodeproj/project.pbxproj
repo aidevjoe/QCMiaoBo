@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		27264138B3BB5F7E861DD3F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B19D24ED1F868659A64181 /* libPods.a */; };
+		D82B19BB1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */; };
+		D82B19BD1D3E08AE00BD9652 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82B19BC1D3E08AE00BD9652 /* Reveal.framework */; };
+		D82B19C01D3E10E300BD9652 /* QCNewAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */; };
+		D82B19C31D3E135100BD9652 /* QCNewAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */; };
 		D83CA99F1D363F50000E718D /* QCAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA99E1D363F50000E718D /* QCAnchor.m */; };
 		D83CA9A21D36451A000E718D /* QCHomeAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA9A11D36451A000E718D /* QCHomeAnchorCell.m */; };
 		D86AB0231D37238900124DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86AB0221D37238900124DC9 /* Assets.xcassets */; };
@@ -35,6 +39,8 @@
 		D8854DA01D3CD19E003F7C2B /* QCSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8854D9F1D3CD19E003F7C2B /* QCSliderView.m */; };
 		D8854DA31D3CD845003F7C2B /* QCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8854DA21D3CD845003F7C2B /* QCNewViewController.m */; };
 		D8854DA61D3CD85B003F7C2B /* QCFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8854DA51D3CD85B003F7C2B /* QCFollowViewController.m */; };
+		D89146071D3DE12D002C8455 /* QCAd.m in Sources */ = {isa = PBXBuildFile; fileRef = D89146061D3DE12D002C8455 /* QCAd.m */; };
+		D891460D1D3DE733002C8455 /* QCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D891460C1D3DE733002C8455 /* QCWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,13 @@
 		31B19D24ED1F868659A64181 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC8BBD6D901FA70D4BA0DF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A0023310D7E8A68C0539B817 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D82B19B91D3E05FF00BD9652 /* UITabBarController+ShowHideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ShowHideBar.h"; sourceTree = "<group>"; };
+		D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ShowHideBar.m"; sourceTree = "<group>"; };
+		D82B19BC1D3E08AE00BD9652 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		D82B19BE1D3E10E300BD9652 /* QCNewAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCNewAnchor.h; sourceTree = "<group>"; };
+		D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewAnchor.m; sourceTree = "<group>"; };
+		D82B19C11D3E135100BD9652 /* QCNewAnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCNewAnchorCell.h; sourceTree = "<group>"; };
+		D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewAnchorCell.m; sourceTree = "<group>"; };
 		D83CA99D1D363F50000E718D /* QCAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCAnchor.h; sourceTree = "<group>"; };
 		D83CA99E1D363F50000E718D /* QCAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCAnchor.m; sourceTree = "<group>"; };
 		D83CA9A01D36451A000E718D /* QCHomeAnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCHomeAnchorCell.h; sourceTree = "<group>"; };
@@ -116,6 +129,10 @@
 		D8854DA21D3CD845003F7C2B /* QCNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewViewController.m; sourceTree = "<group>"; };
 		D8854DA41D3CD85B003F7C2B /* QCFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCFollowViewController.h; sourceTree = "<group>"; };
 		D8854DA51D3CD85B003F7C2B /* QCFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCFollowViewController.m; sourceTree = "<group>"; };
+		D89146051D3DE12D002C8455 /* QCAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCAd.h; sourceTree = "<group>"; };
+		D89146061D3DE12D002C8455 /* QCAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCAd.m; sourceTree = "<group>"; };
+		D891460B1D3DE733002C8455 /* QCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCWebViewController.h; sourceTree = "<group>"; };
+		D891460C1D3DE733002C8455 /* QCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82B19BD1D3E08AE00BD9652 /* Reveal.framework in Frameworks */,
 				27264138B3BB5F7E861DD3F9 /* libPods.a in Frameworks */,
 				D86AB02E1D372EFD00124DC9 /* IJKMediaFramework.framework in Frameworks */,
 			);
@@ -157,6 +175,7 @@
 		D8813FDC1D3628D300BD35E7 = {
 			isa = PBXGroup;
 			children = (
+				D82B19BC1D3E08AE00BD9652 /* Reveal.framework */,
 				D8813FE71D3628D300BD35E7 /* QCMiaoBo */,
 				D88140011D3628D300BD35E7 /* QCMiaoBoTests */,
 				D881400C1D3628D300BD35E7 /* QCMiaoBoUITests */,
@@ -247,6 +266,8 @@
 				D88140431D362DD800BD35E7 /* QCHomeViewController.m */,
 				D8854D9B1D3CD0EA003F7C2B /* QCHotViewController.h */,
 				D8854D9C1D3CD0EA003F7C2B /* QCHotViewController.m */,
+				D891460B1D3DE733002C8455 /* QCWebViewController.h */,
+				D891460C1D3DE733002C8455 /* QCWebViewController.m */,
 				D8854DA11D3CD845003F7C2B /* QCNewViewController.h */,
 				D8854DA21D3CD845003F7C2B /* QCNewViewController.m */,
 				D8854DA41D3CD85B003F7C2B /* QCFollowViewController.h */,
@@ -262,6 +283,10 @@
 			children = (
 				D83CA99D1D363F50000E718D /* QCAnchor.h */,
 				D83CA99E1D363F50000E718D /* QCAnchor.m */,
+				D89146051D3DE12D002C8455 /* QCAd.h */,
+				D89146061D3DE12D002C8455 /* QCAd.m */,
+				D82B19BE1D3E10E300BD9652 /* QCNewAnchor.h */,
+				D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +298,8 @@
 				D83CA9A11D36451A000E718D /* QCHomeAnchorCell.m */,
 				D8854D9E1D3CD19E003F7C2B /* QCSliderView.h */,
 				D8854D9F1D3CD19E003F7C2B /* QCSliderView.m */,
+				D82B19C11D3E135100BD9652 /* QCNewAnchorCell.h */,
+				D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				D881406F1D36359400BD35E7 /* MBProgressHUD */,
+				D82B19B91D3E05FF00BD9652 /* UITabBarController+ShowHideBar.h */,
+				D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -490,6 +519,7 @@
 				TargetAttributes = {
 					D8813FE41D3628D300BD35E7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 94BV5KL5KF;
 					};
 					D8813FFD1D3628D300BD35E7 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -601,6 +631,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D86AB02C1D372E9300124DC9 /* QCViewController.m in Sources */,
+				D82B19C31D3E135100BD9652 /* QCNewAnchorCell.m in Sources */,
 				D8813FED1D3628D300BD35E7 /* AppDelegate.m in Sources */,
 				D881404A1D362DFC00BD35E7 /* QCMineViewController.m in Sources */,
 				D88140801D363C4E00BD35E7 /* MHNetworkManager.m in Sources */,
@@ -609,10 +640,14 @@
 				D8854D971D3CC406003F7C2B /* QCTools.m in Sources */,
 				D88140721D36359400BD35E7 /* MBProgressHUD+Add.m in Sources */,
 				D881403E1D362C1000BD35E7 /* QCTabBarController.m in Sources */,
+				D891460D1D3DE733002C8455 /* QCWebViewController.m in Sources */,
+				D82B19BB1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m in Sources */,
 				D8854DA31D3CD845003F7C2B /* QCNewViewController.m in Sources */,
 				D88140821D363DF300BD35E7 /* Log.m in Sources */,
 				D8854DA61D3CD85B003F7C2B /* QCFollowViewController.m in Sources */,
 				D8854D9A1D3CC5D9003F7C2B /* UIView+Extend.m in Sources */,
+				D82B19C01D3E10E300BD9652 /* QCNewAnchor.m in Sources */,
+				D89146071D3DE12D002C8455 /* QCAd.m in Sources */,
 				D88140441D362DD800BD35E7 /* QCHomeViewController.m in Sources */,
 				D88140471D362DE700BD35E7 /* QCLiveVIewController.m in Sources */,
 				D83CA9A21D36451A000E718D /* QCHomeAnchorCell.m in Sources */,
@@ -744,6 +779,8 @@
 			baseConfigurationReference = 7CC8BBD6D901FA70D4BA0DF4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -753,6 +790,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.joesir.www.QCMiaoBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -761,6 +799,8 @@
 			baseConfigurationReference = A0023310D7E8A68C0539B817 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -770,6 +810,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.joesir.www.QCMiaoBo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

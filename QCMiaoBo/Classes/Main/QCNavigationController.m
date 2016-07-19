@@ -14,6 +14,7 @@
 + (void)initialize{
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setBackgroundImage:[UIImage imageNamed:@"navBar_bg_414x70"] forBarMetrics:UIBarMetricsDefault];
+    [bar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{

@@ -1,1 +1,1 @@
-../../../LFLiveKit/LFLiveKit/upload/LFStreamSocket.h
+../../../LFLiveKit/LFLiveKit/publish/LFStreamSocket.h

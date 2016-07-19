@@ -24,6 +24,7 @@
     self.window.rootViewController = [[QCTabBarController alloc] init];
     
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

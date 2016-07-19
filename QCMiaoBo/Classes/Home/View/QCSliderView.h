@@ -10,7 +10,12 @@
 
 @interface QCSliderView : UIView
 
+@property (nonatomic, copy) void (^didSelectedTitleBtn)(NSInteger);
 
 + (QCSliderView *)sliderViewWithTitles:(NSArray *)titles;
+- (QCSliderView *)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
+
+- (void)setSelectedBtnWithIndex:(NSInteger)index;
+@property (nonatomic, strong) UIView *lineV;
 
 @end

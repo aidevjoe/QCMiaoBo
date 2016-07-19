@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AEFA5AA7043006962ACE248C'
+               BlueprintIdentifier = 'AB510674146B9EB0C967C629'
                BlueprintName = 'BarrageRenderer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libBarrageRenderer.a'>

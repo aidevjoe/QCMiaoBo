@@ -1,1 +1,1 @@
-../../../LFLiveKit/LFLiveKit/upload/NSMutableArray+LFAdd.h
+../../../LFLiveKit/LFLiveKit/publish/NSMutableArray+LFAdd.h

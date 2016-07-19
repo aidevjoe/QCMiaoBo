@@ -54,6 +54,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>XRCarouselView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YYDispatchQueuePool.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,12 +77,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05D31E037DFDD4FE5825858EFA763994</key>
+		<key>29BEEEA6C25F2F5C3C8EA9B3C583B52E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>38E0754A8967A17D5D205FF62623285E</key>
+		<key>2C5707534B5C4949447FC203492EF960</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4DFDBAD128119EDC39FA734F357A9CBA</key>
+		<key>4AEE97EDB786925A0FB6EE893B00C63D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>730C78CEA726B7CDF1B61E2341BC045D</key>
+		<key>70C74790C69098804F423447241728A7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,27 +112,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A03C181DBF859EEA1C83F7F8DCDB46FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4C6F7446AF43987531579D054FBC235</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B28EB41B1954D9F27D6371BAF2BE6EE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BED8A336C8A285C057115BB2145DAB46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E32B3E40CEA74F2DF121019F7256A8BA</key>
+		<key>EBCF07B7D70C4F1DB8ABEFB85BF1B5DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD98037A657615B69101FEF64521D4D3</key>
+		<key>EC75E5368809B16AE63FB0C7D7D4C839</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FF1CA2C8D5D11E47C91C15B267C8B3B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

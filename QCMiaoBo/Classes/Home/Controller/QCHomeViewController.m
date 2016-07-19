@@ -12,7 +12,7 @@
 #import "QCNewViewController.h"
 #import "QCFollowViewController.h"
 #import "QCUtilsMacro.h"
-
+#import "QCWebViewController.h"
 
 @interface QCHomeViewController () <UIScrollViewDelegate>
 
@@ -52,7 +52,7 @@
 
 - (QCSliderView *)sliderView{
     if (!_sliderView) {
-        _sliderView = [QCSliderView sliderViewWithTitles:@[@"最热", @"最新", @"关注"]];
+        _sliderView = [QCSliderView sliderViewWithTitles:@[@"热门", @"最新", @"关注"]];
     }
     return _sliderView;
 }
@@ -61,8 +61,9 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
-    [self.navigationItem setTitleView:self.sliderView];
+
+    //初始化titleView
+    [self initSliderView];
     
     //添加子视图
     [self initChildController];
@@ -78,6 +79,28 @@
         [self.scrollView addSubview:vc.view];
         [self addChildViewController:vc];
     }
+}
+
+- (void)initSliderView{
+    [self.navigationItem setTitleView:self.sliderView];
+    
+    WeakSelf;
+    self.sliderView.didSelectedTitleBtn = ^(NSInteger index){
+        [weakSelf.scrollView setContentOffset:CGPointMake(index * ScreenWidth, 0) animated:YES];
+    };
+}
+
+#pragma mark - ScrollView Delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSInteger index = scrollView.contentOffset.x / (ScreenWidth * .75);
+    
+    CGFloat offsetX = scrollView.contentOffset.x / ScreenWidth * (self.sliderView.width * 0.5 - self.sliderView.width / 3 * 0.5);
+
+    self.sliderView.lineV.x = 11 + offsetX;
+    
+    [self.sliderView setSelectedBtnWithIndex:index];
+    
+    NSLog(@"%f", scrollView.contentOffset.y);
 }
 
 
