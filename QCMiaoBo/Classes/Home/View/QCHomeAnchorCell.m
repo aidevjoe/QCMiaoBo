@@ -121,6 +121,10 @@
     
     self.nicknameLabel.text = anchor.myname;
     
+    if (self.nicknameLabel.text.length > 14) {
+        self.nicknameLabel.text = [[self.nicknameLabel.text substringToIndex:9] stringByAppendingString:@"…"];
+    }
+    
     [self.addressBtn setTitle:anchor.gps.length ? anchor.gps : @"喵星" forState:UIControlStateNormal];
     
     self.starImageV.image = [UIImage imageNamed:[NSString stringWithFormat:@"girl_star%ld_40x19", anchor.starlevel]];

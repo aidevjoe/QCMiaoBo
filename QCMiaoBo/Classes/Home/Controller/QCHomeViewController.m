@@ -45,6 +45,7 @@
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate = self;
+        _scrollView.scrollsToTop = NO;
         [self.view addSubview:_scrollView];
     }
     return _scrollView;
@@ -63,14 +64,26 @@
     [super viewDidLoad];
 
     //初始化titleView
-    [self initSliderView];
+    [self initNavigation];
     
     //添加子视图
     [self initChildController];
+    
+    //添加通知
+    [self addNotice];
 }
 
+- (void)dealloc{
+    [DefaultNotificationCenter removeObserver:self];
+}
 
 #pragma mark - custom action
+- (void)addNotice{ //添加 关注控制器中查看热门主播的通知
+    WeakSelf;
+    [DefaultNotificationCenter addObserverForName:kGoToHotLiveNotice object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+        [weakSelf.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }];
+}
 
 - (void)initChildController{
     for (int i = 0; i < self.childVc.count; i ++) {
@@ -81,13 +94,26 @@
     }
 }
 
-- (void)initSliderView{
+- (void)searchItemClick{
+    [self.navigationController pushViewController:[NSClassFromString(@"QCSearchViewController") new] animated:YES];
+}
+
+- (void)rankItemClick{
+    QCWebViewController *webVc = [QCWebViewController webViewWithUrl:@"http://live.9158.com/Rank/WeekRank?Random=10" title:@"排行"];
+    [self.navigationController pushViewController:webVc animated:YES];
+}
+
+
+- (void)initNavigation{
     [self.navigationItem setTitleView:self.sliderView];
     
     WeakSelf;
     self.sliderView.didSelectedTitleBtn = ^(NSInteger index){
         [weakSelf.scrollView setContentOffset:CGPointMake(index * ScreenWidth, 0) animated:YES];
     };
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_15x14"] style:UIBarButtonItemStylePlain target:self action:@selector(searchItemClick)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"head_crown_24x24"] style:UIBarButtonItemStylePlain target:self action:@selector(rankItemClick)];
 }
 
 #pragma mark - ScrollView Delegate
@@ -99,8 +125,6 @@
     self.sliderView.lineV.x = 11 + offsetX;
     
     [self.sliderView setSelectedBtnWithIndex:index];
-    
-    NSLog(@"%f", scrollView.contentOffset.y);
 }
 
 

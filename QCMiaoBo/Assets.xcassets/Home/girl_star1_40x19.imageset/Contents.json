@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "girl_star1_40x19.png"
+      "filename" : "girl_star1_40x19.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

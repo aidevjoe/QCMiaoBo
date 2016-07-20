@@ -10,4 +10,16 @@
 
 @implementation QCAnchor
 
+
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+             @"isXinUser" : @"new",
+             };
+}
+
+- (NSString *)bigpic{
+    return _bigpic ? _bigpic : _photo;
+}
+
+
 @end

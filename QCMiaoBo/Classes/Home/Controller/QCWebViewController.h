@@ -11,5 +11,7 @@
 @interface QCWebViewController : QCViewController
 
 + (QCWebViewController *)webViewWithUrl:(NSString *)url title:(NSString *)title;
++ (QCWebViewController *)webViewWithUrl:(NSString *)url;
+
 - (instancetype)initWithUrl:(NSString *)url title:(NSString *)title;
 @end

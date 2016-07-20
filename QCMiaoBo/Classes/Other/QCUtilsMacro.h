@@ -6,16 +6,10 @@
 //  Copyright © 2016年 Joe. All rights reserved.
 //
 #import "UIView+Extend.h"
-
+#import "QCTools.h"
 
 #ifndef QCUtilsMacro_h
 #define QCUtilsMacro_h
-
-#ifdef DEBUG
-#define NLLog(format,...)    NSLog(format,##__VA_ARGS__)
-#else
-#define NLLog(format,...)    (void)0
-#endif
 
 //重写NSLog,Debug模式下打印日志和当前行数
 #if DEBUG
@@ -27,18 +21,24 @@
 #define NLLocalizedString(key) \
 [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:nil]
 
+//屏幕宽高
 #define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
 #define PI 3.141592654
 
-#define PathForKey(pathKey) [NLUtility addressInfoForKey:pathKey]
+//默认的通知中心
+#define DefaultNotificationCenter [NSNotificationCenter defaultCenter]
 
-#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
-#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+// 看热门主播
+#define kGoToHotLiveNotice @"GoToHotLiveNotice"
 
+//宏定义检测block是否可用
+#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
+
+// 弱引用
+#define WeakSelf __weak typeof(self) weakSelf = self;
+
+#pragma mark - 颜色
 // 随机颜色
 #define RANDOM_COLOR [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1]
 
@@ -51,17 +51,10 @@
 #define HexColor(color) [QCTools colorWithHexString:(color)]
 #define HexColorAndAlpha(color, alp) [QCTools colorWithHexString:(color) alpha:(alp)]
 
-//宏定义检测block是否可用
-#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
-
-// 弱引用
-#define WeakSelf __weak typeof(self) weakSelf = self;
-
-//颜色
 //全局颜色
 #define KeyColor RGBCOLOR(216, 41, 116)
 //背景色
 #define gbColor UIColorFromRGB(0xF6F2F4)
 
-
 #endif /* QCUtilsMacro_h */
+

@@ -16,17 +16,20 @@
 #import "XRCarouselView.h"
 #import "QCUtilsMacro.h"
 #import "QCWebViewController.h"
-
+#import "MJRefresh.h"
+#import "QCRefreshGifHeader.h"
 
 @interface QCHotViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSArray *anchorData; /**< 直播数组 */
+@property (nonatomic, strong) NSMutableArray *anchorData; /**< 直播数组 */
 
 @property (nonatomic, strong) NSArray *adData; /**< 广告数组 */
 
 @property (nonatomic, strong) XRCarouselView *adView; /**< 广告视图 */
+
+@property (nonatomic, assign) NSUInteger page;
 
 @end
 
@@ -40,18 +43,23 @@
         _tableView.height -= 104;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = 410;
+        _tableView.rowHeight = 430;
         _tableView.tableHeaderView = self.adView;
         [self.view addSubview:_tableView];
     }
     return _tableView;
 }
 
-- (NSArray *)anchorData{
+- (void)setAnchorData:(NSMutableArray *)anchorData{
     if (!_anchorData) {
-        _anchorData = [NSArray array];
+        _anchorData = [NSMutableArray array];
     }
-    return _anchorData;
+    if (self.page == 1){
+        [_anchorData setArray:anchorData];
+    }else{
+        [_anchorData addObjectsFromArray:anchorData];
+    }
+    [self.tableView reloadData];
 }
 
 - (NSArray *)adData{
@@ -74,16 +82,39 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    [self sendRequest];
-    
+    //初始化上拉、下拉刷新
+    [self initHeaderAndFooterView];
+
+    //获取数据
+    [self getAdData];
+    [self getLiveData];
+
+    //监听广告图的图片点击
     WeakSelf;
     self.adView.imageClickBlock = ^(NSInteger index){
         QCAd *ad = weakSelf.adData[index];
         [weakSelf.navigationController pushViewController:[QCWebViewController webViewWithUrl:ad.link title:ad.title] animated:YES];
     };
+    
 }
 
-- (void)sendRequest{
+- (void)initHeaderAndFooterView{
+    //默认为第一页
+    self.page = 1;
+    
+    self.tableView.mj_header = [QCRefreshGifHeader headerWithRefreshingBlock:^{
+        self.page = 1;
+        [self getAdData];
+        [self getLiveData];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        self.page += 1;
+        [self getLiveData];
+    }];
+}
+
+- (void)getAdData{
     [MHNetworkManager getRequstWithURL:@"http://live.9158.com/Living/GetAD" params:nil successBlock:^(id returnData, int code, NSString *msg) {
         
         NSMutableArray *dataArr = [NSMutableArray array];
@@ -99,27 +130,34 @@
         self.adView.imageArray = adImageUrlArr;
     } failureBlock:^(NSError *error) {
         NSLog(@"%@", error);
+    } showHUD:NO];
+}
+
+- (void)getLiveData{
+    [MHNetworkManager getRequstWithURL:[NSString stringWithFormat:@"http://live.9158.com/Fans/GetHotLive?page=%li", self.page] params:nil successBlock:^(id returnData, int code, NSString *msg) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
         
-    } showHUD:YES];
-    
-    [MHNetworkManager getRequstWithURL:@"http://live.9158.com/Fans/GetHotLive?page=1" params:nil successBlock:^(id returnData, int code, NSString *msg) {
-        
-        NSMutableArray *dataArr = [NSMutableArray array];
+        NSMutableArray *arrayM = [NSMutableArray array];
         for (NSDictionary *dict in returnData[@"data"][@"list"]) {
-            [dataArr addObject:[QCAnchor yy_modelWithJSON:dict]];
+            [arrayM addObject:[QCAnchor yy_modelWithJSON:dict]];
         }
-        self.anchorData = dataArr;
-        [self.tableView reloadData];
-    } failureBlock:^(NSError *error) {
-        NSLog(@"%@", error);
+        self.anchorData = arrayM;
         
-    } showHUD:YES];
+    } failureBlock:^(NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
+        
+        self.page --;
+        
+        NSLog(@"%@", error);
+    } showHUD:NO];
 }
 
 #pragma mark TableViewDelegate && TableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.anchorData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -133,8 +171,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     QCWatchLiveViewController *wlVC = [[QCWatchLiveViewController alloc] init];
     wlVC.anchor = self.anchorData[indexPath.row];
-    [self.navigationController pushViewController:wlVC animated:YES];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self presentViewController:wlVC animated:YES completion:nil];
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView{

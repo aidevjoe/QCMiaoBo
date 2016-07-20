@@ -7,8 +7,14 @@
 //
 
 #import "QCFollowViewController.h"
+#import "QCUtilsMacro.h"
+#import <PureLayout.h>
 
 @interface QCFollowViewController ()
+
+@property (nonatomic, strong) UIImageView *noFollowImg;
+@property (nonatomic, strong) UILabel *noFollowLabel;
+@property (nonatomic, strong) UIButton *goToHotLiveBtn;
 
 @end
 
@@ -17,22 +23,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor purpleColor];
+    //初始化UI
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupUI{
+    self.noFollowImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no_follow_250x247"]];
+    [self.view addSubview:self.noFollowImg];
+    
+    self.noFollowLabel = [UILabel new];
+    self.noFollowLabel.text = @"您关注的主播还没有开播";
+    self.noFollowLabel.textColor = HexColor(@"AAAAAA");
+    self.noFollowLabel.font = [UIFont systemFontOfSize:15];
+    [self.view addSubview:self.noFollowLabel];
+    
+    self.goToHotLiveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.goToHotLiveBtn setTitle:@"去看看当前热门主播" forState:UIControlStateNormal];
+    [self.goToHotLiveBtn setTitleColor:KeyColor forState:UIControlStateNormal];
+    self.goToHotLiveBtn.layer.masksToBounds = YES;
+    self.goToHotLiveBtn.layer.cornerRadius = 20;
+    self.goToHotLiveBtn.layer.borderColor = KeyColor.CGColor;
+    self.goToHotLiveBtn.layer.borderWidth = 1.f;
+    [self.goToHotLiveBtn addTarget:self action:@selector(goToHotLiveBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.goToHotLiveBtn];
+    
+    [self.noFollowImg autoAlignAxisToSuperviewAxis:ALAxisVertical];
+    [self.noFollowImg autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.view withOffset: - 100];
+    
+    [self.noFollowLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.noFollowImg];
+    [self.noFollowLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.noFollowImg withOffset:8];
+    
+    [self.goToHotLiveBtn autoAlignAxis:ALAxisVertical toSameAxisOfView:self.noFollowImg];
+    [self.goToHotLiveBtn autoSetDimensionsToSize:CGSizeMake(250, 40)];
+    [self.goToHotLiveBtn autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.noFollowLabel withOffset:30];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)goToHotLiveBtnClick{
+    [DefaultNotificationCenter postNotificationName:kGoToHotLiveNotice object:nil];
 }
-*/
 
 @end

@@ -10,12 +10,10 @@
 		27264138B3BB5F7E861DD3F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B19D24ED1F868659A64181 /* libPods.a */; };
 		D82B19BB1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */; };
 		D82B19BD1D3E08AE00BD9652 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82B19BC1D3E08AE00BD9652 /* Reveal.framework */; };
-		D82B19C01D3E10E300BD9652 /* QCNewAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */; };
 		D82B19C31D3E135100BD9652 /* QCNewAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */; };
 		D83CA99F1D363F50000E718D /* QCAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA99E1D363F50000E718D /* QCAnchor.m */; };
 		D83CA9A21D36451A000E718D /* QCHomeAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA9A11D36451A000E718D /* QCHomeAnchorCell.m */; };
 		D86AB0231D37238900124DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86AB0221D37238900124DC9 /* Assets.xcassets */; };
-		D86AB0251D3723FD00124DC9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86AB0241D3723FD00124DC9 /* Launch Screen.storyboard */; };
 		D86AB0291D372E8500124DC9 /* QCWatchLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86AB0281D372E8500124DC9 /* QCWatchLiveViewController.m */; };
 		D86AB02C1D372E9300124DC9 /* QCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86AB02B1D372E9300124DC9 /* QCViewController.m */; };
 		D86AB02E1D372EFD00124DC9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86AB02D1D372EFD00124DC9 /* IJKMediaFramework.framework */; };
@@ -41,6 +39,10 @@
 		D8854DA61D3CD85B003F7C2B /* QCFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8854DA51D3CD85B003F7C2B /* QCFollowViewController.m */; };
 		D89146071D3DE12D002C8455 /* QCAd.m in Sources */ = {isa = PBXBuildFile; fileRef = D89146061D3DE12D002C8455 /* QCAd.m */; };
 		D891460D1D3DE733002C8455 /* QCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D891460C1D3DE733002C8455 /* QCWebViewController.m */; };
+		D8E1D6A91D3F3E8F00F23292 /* QCRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1D6A81D3F3E8F00F23292 /* QCRefreshGifHeader.m */; };
+		D8E1D6C61D3F441E00F23292 /* QCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1D6C51D3F441E00F23292 /* QCSearchViewController.m */; };
+		D8E1D6CD1D3F604500F23292 /* NSObject+DetailOptimize.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1D6CC1D3F604500F23292 /* NSObject+DetailOptimize.m */; };
+		D8E1D6D01D3F622500F23292 /* QCMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E1D6CF1D3F622500F23292 /* QCMineHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +69,6 @@
 		D82B19B91D3E05FF00BD9652 /* UITabBarController+ShowHideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ShowHideBar.h"; sourceTree = "<group>"; };
 		D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ShowHideBar.m"; sourceTree = "<group>"; };
 		D82B19BC1D3E08AE00BD9652 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
-		D82B19BE1D3E10E300BD9652 /* QCNewAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCNewAnchor.h; sourceTree = "<group>"; };
-		D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewAnchor.m; sourceTree = "<group>"; };
 		D82B19C11D3E135100BD9652 /* QCNewAnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCNewAnchorCell.h; sourceTree = "<group>"; };
 		D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewAnchorCell.m; sourceTree = "<group>"; };
 		D83CA99D1D363F50000E718D /* QCAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCAnchor.h; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 		D83CA9A01D36451A000E718D /* QCHomeAnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCHomeAnchorCell.h; sourceTree = "<group>"; };
 		D83CA9A11D36451A000E718D /* QCHomeAnchorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCHomeAnchorCell.m; sourceTree = "<group>"; };
 		D86AB0221D37238900124DC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D86AB0241D3723FD00124DC9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D86AB0261D3729A900124DC9 /* QCUtilsMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUtilsMacro.h; sourceTree = "<group>"; };
 		D86AB0271D372E8500124DC9 /* QCWatchLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCWatchLiveViewController.h; sourceTree = "<group>"; };
 		D86AB0281D372E8500124DC9 /* QCWatchLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCWatchLiveViewController.m; sourceTree = "<group>"; };
@@ -133,6 +132,14 @@
 		D89146061D3DE12D002C8455 /* QCAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCAd.m; sourceTree = "<group>"; };
 		D891460B1D3DE733002C8455 /* QCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCWebViewController.h; sourceTree = "<group>"; };
 		D891460C1D3DE733002C8455 /* QCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCWebViewController.m; sourceTree = "<group>"; };
+		D8E1D6A71D3F3E8F00F23292 /* QCRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCRefreshGifHeader.h; sourceTree = "<group>"; };
+		D8E1D6A81D3F3E8F00F23292 /* QCRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCRefreshGifHeader.m; sourceTree = "<group>"; };
+		D8E1D6C41D3F441E00F23292 /* QCSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCSearchViewController.h; sourceTree = "<group>"; };
+		D8E1D6C51D3F441E00F23292 /* QCSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCSearchViewController.m; sourceTree = "<group>"; };
+		D8E1D6CB1D3F604500F23292 /* NSObject+DetailOptimize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DetailOptimize.h"; sourceTree = "<group>"; };
+		D8E1D6CC1D3F604500F23292 /* NSObject+DetailOptimize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DetailOptimize.m"; sourceTree = "<group>"; };
+		D8E1D6CE1D3F622500F23292 /* QCMineHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QCMineHeaderView.h; path = ../../Home/View/QCMineHeaderView.h; sourceTree = "<group>"; };
+		D8E1D6CF1D3F622500F23292 /* QCMineHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QCMineHeaderView.m; path = ../../Home/View/QCMineHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				D86AB0221D37238900124DC9 /* Assets.xcassets */,
-				D86AB0241D3723FD00124DC9 /* Launch Screen.storyboard */,
 				D8813FE91D3628D300BD35E7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -266,6 +272,8 @@
 				D88140431D362DD800BD35E7 /* QCHomeViewController.m */,
 				D8854D9B1D3CD0EA003F7C2B /* QCHotViewController.h */,
 				D8854D9C1D3CD0EA003F7C2B /* QCHotViewController.m */,
+				D8E1D6C41D3F441E00F23292 /* QCSearchViewController.h */,
+				D8E1D6C51D3F441E00F23292 /* QCSearchViewController.m */,
 				D891460B1D3DE733002C8455 /* QCWebViewController.h */,
 				D891460C1D3DE733002C8455 /* QCWebViewController.m */,
 				D8854DA11D3CD845003F7C2B /* QCNewViewController.h */,
@@ -285,8 +293,6 @@
 				D83CA99E1D363F50000E718D /* QCAnchor.m */,
 				D89146051D3DE12D002C8455 /* QCAd.h */,
 				D89146061D3DE12D002C8455 /* QCAd.m */,
-				D82B19BE1D3E10E300BD9652 /* QCNewAnchor.h */,
-				D82B19BF1D3E10E300BD9652 /* QCNewAnchor.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +385,8 @@
 		D881403A1D362A2B00BD35E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8E1D6CE1D3F622500F23292 /* QCMineHeaderView.h */,
+				D8E1D6CF1D3F622500F23292 /* QCMineHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +400,8 @@
 				D8854D961D3CC406003F7C2B /* QCTools.m */,
 				D8854D981D3CC5D9003F7C2B /* UIView+Extend.h */,
 				D8854D991D3CC5D9003F7C2B /* UIView+Extend.m */,
+				D8E1D6A71D3F3E8F00F23292 /* QCRefreshGifHeader.h */,
+				D8E1D6A81D3F3E8F00F23292 /* QCRefreshGifHeader.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -410,6 +420,8 @@
 				D881406F1D36359400BD35E7 /* MBProgressHUD */,
 				D82B19B91D3E05FF00BD9652 /* UITabBarController+ShowHideBar.h */,
 				D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */,
+				D8E1D6CB1D3F604500F23292 /* NSObject+DetailOptimize.h */,
+				D8E1D6CC1D3F604500F23292 /* NSObject+DetailOptimize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -556,7 +568,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86AB0251D3723FD00124DC9 /* Launch Screen.storyboard in Resources */,
 				D86AB0231D37238900124DC9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,17 +652,20 @@
 				D88140721D36359400BD35E7 /* MBProgressHUD+Add.m in Sources */,
 				D881403E1D362C1000BD35E7 /* QCTabBarController.m in Sources */,
 				D891460D1D3DE733002C8455 /* QCWebViewController.m in Sources */,
+				D8E1D6CD1D3F604500F23292 /* NSObject+DetailOptimize.m in Sources */,
 				D82B19BB1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m in Sources */,
 				D8854DA31D3CD845003F7C2B /* QCNewViewController.m in Sources */,
 				D88140821D363DF300BD35E7 /* Log.m in Sources */,
 				D8854DA61D3CD85B003F7C2B /* QCFollowViewController.m in Sources */,
 				D8854D9A1D3CC5D9003F7C2B /* UIView+Extend.m in Sources */,
-				D82B19C01D3E10E300BD9652 /* QCNewAnchor.m in Sources */,
 				D89146071D3DE12D002C8455 /* QCAd.m in Sources */,
 				D88140441D362DD800BD35E7 /* QCHomeViewController.m in Sources */,
+				D8E1D6C61D3F441E00F23292 /* QCSearchViewController.m in Sources */,
 				D88140471D362DE700BD35E7 /* QCLiveVIewController.m in Sources */,
 				D83CA9A21D36451A000E718D /* QCHomeAnchorCell.m in Sources */,
+				D8E1D6A91D3F3E8F00F23292 /* QCRefreshGifHeader.m in Sources */,
 				D881407E1D363C4E00BD35E7 /* MHAsiNetworkHandler.m in Sources */,
+				D8E1D6D01D3F622500F23292 /* QCMineHeaderView.m in Sources */,
 				D881407F1D363C4E00BD35E7 /* MHAsiNetworkItem.m in Sources */,
 				D88140411D362C2300BD35E7 /* QCNavigationController.m in Sources */,
 				D83CA99F1D363F50000E718D /* QCAnchor.m in Sources */,
@@ -779,6 +793,7 @@
 			baseConfigurationReference = 7CC8BBD6D901FA70D4BA0DF4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -799,6 +814,7 @@
 			baseConfigurationReference = A0023310D7E8A68C0539B817 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

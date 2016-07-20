@@ -30,7 +30,13 @@
 }
 
 - (void)back{
-    [self popViewControllerAnimated:YES];
+//    [self popViewControllerAnimated:YES];
+    
+    // 判断两种情况: push 和 present
+    if ((self.presentedViewController || self.presentingViewController) && self.childViewControllers.count == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else
+        [self popViewControllerAnimated:YES];
 }
 
 @end

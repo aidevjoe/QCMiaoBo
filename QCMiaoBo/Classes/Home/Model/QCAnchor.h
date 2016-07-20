@@ -41,5 +41,15 @@
 @property (nonatomic, assign) NSUInteger pos;
 /** starImage */
 @property (nonatomic, strong) UIImage *starImage;
+/** 主播名 */
+@property (nonatomic, copy) NSString *nickname;
+/** 所在城市 */
+@property (nonatomic, copy) NSString *position;
+/** 主播头像 */
+@property (nonatomic, copy) NSString *photo;
+
+@property (nonatomic, assign) NSInteger sex;
+
+@property (nonatomic, assign) NSInteger isXinUser;
 
 @end

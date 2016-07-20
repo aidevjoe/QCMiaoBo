@@ -8,7 +8,7 @@
 
 #import "QCWebViewController.h"
 
-@interface QCWebViewController ()
+@interface QCWebViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
 
@@ -19,6 +19,7 @@
 - (UIWebView *)webView{
     if (!_webView) {
         _webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//        _webView.delegate = self;
         [self.view addSubview:_webView];
     }
     return _webView;
@@ -32,9 +33,23 @@
     return self;
 }
 
++ (QCWebViewController *)webViewWithUrl:(NSString *)url{
+    return [self webViewWithUrl:url title:nil];
+}
+
 + (QCWebViewController *)webViewWithUrl:(NSString *)url title:(NSString *)title{
     return [[self alloc] initWithUrl:url title:title];
 }
 
+#pragma mark - WebView Delegate
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (theTitle.length > 10) {
+        theTitle = [[theTitle substringToIndex:9] stringByAppendingString:@"…"];
+    }
+    self.title = theTitle;
+}
 
 @end

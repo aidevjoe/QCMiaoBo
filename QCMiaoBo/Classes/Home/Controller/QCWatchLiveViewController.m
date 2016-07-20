@@ -90,7 +90,6 @@
 }
 
 - (void)backClick{
-    [self.navigationController popViewControllerAnimated:true];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

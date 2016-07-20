@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class QCNewAnchor;
+@class QCAnchor;
 
 @interface QCNewAnchorCell : UICollectionViewCell
 
-@property (nonatomic, strong) QCNewAnchor *anchor;
+@property (nonatomic, strong) QCAnchor *anchor;
 
 
 @end
