@@ -10,4 +10,5 @@
 
 @interface QCViewController : UIViewController
 
+- (void)statusBarTappedAction;
 @end

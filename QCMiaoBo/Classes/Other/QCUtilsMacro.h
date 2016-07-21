@@ -28,6 +28,7 @@
 
 //默认的通知中心
 #define DefaultNotificationCenter [NSNotificationCenter defaultCenter]
+static NSString * const kStatusBarTappedNotification = @"statusBarTappedNotification";
 
 // 看热门主播
 #define kGoToHotLiveNotice @"GoToHotLiveNotice"

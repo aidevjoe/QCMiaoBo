@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "QCTabBarController.h"
+#import "QCUtilsMacro.h"
 
 @interface AppDelegate ()
 
@@ -50,4 +51,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Status bar touch tracking
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    CGPoint location = [[[event allTouches] anyObject] locationInView:[self window]];
+    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
+    if (CGRectContainsPoint(statusBarFrame, location)) {
+        [DefaultNotificationCenter postNotificationName:kStatusBarTappedNotification object:nil];
+    }
+}
 @end

@@ -88,6 +88,11 @@
     }];
 }
 
+- (void)statusBarTappedAction{
+    [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
+
 - (void)getNewAnchor{
     
     [MHNetworkManager getRequstWithURL:[NSString stringWithFormat:@"http://live.9158.com/Room/GetNewRoomOnline?page=%li", self.page] params:nil successBlock:^(id returnData, int code, NSString *msg) {

@@ -45,6 +45,9 @@
         _tableView.dataSource = self;
         _tableView.rowHeight = 430;
         _tableView.tableHeaderView = self.adView;
+        _tableView.showsHorizontalScrollIndicator = NO;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.scrollsToTop = YES;
         [self.view addSubview:_tableView];
     }
     return _tableView;
@@ -95,7 +98,24 @@
         QCAd *ad = weakSelf.adData[index];
         [weakSelf.navigationController pushViewController:[QCWebViewController webViewWithUrl:ad.link title:ad.title] animated:YES];
     };
-    
+}
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    
+//    [DefaultNotificationCenter addObserverForName:kStatusBarTappedNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+//        [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+//    }];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    
+//    [DefaultNotificationCenter removeObserver:self];
+//}
+
+- (void)statusBarTappedAction{
+    [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 - (void)initHeaderAndFooterView{

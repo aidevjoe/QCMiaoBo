@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		27264138B3BB5F7E861DD3F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B19D24ED1F868659A64181 /* libPods.a */; };
+		D829196C1D3F88F700E5A935 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829196B1D3F88F700E5A935 /* IJKMediaFramework.framework */; };
 		D82B19BB1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */; };
-		D82B19BD1D3E08AE00BD9652 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82B19BC1D3E08AE00BD9652 /* Reveal.framework */; };
 		D82B19C31D3E135100BD9652 /* QCNewAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */; };
 		D83CA99F1D363F50000E718D /* QCAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA99E1D363F50000E718D /* QCAnchor.m */; };
 		D83CA9A21D36451A000E718D /* QCHomeAnchorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83CA9A11D36451A000E718D /* QCHomeAnchorCell.m */; };
 		D86AB0231D37238900124DC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86AB0221D37238900124DC9 /* Assets.xcassets */; };
 		D86AB0291D372E8500124DC9 /* QCWatchLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86AB0281D372E8500124DC9 /* QCWatchLiveViewController.m */; };
 		D86AB02C1D372E9300124DC9 /* QCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D86AB02B1D372E9300124DC9 /* QCViewController.m */; };
-		D86AB02E1D372EFD00124DC9 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86AB02D1D372EFD00124DC9 /* IJKMediaFramework.framework */; };
 		D8813FEA1D3628D300BD35E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8813FE91D3628D300BD35E7 /* main.m */; };
 		D8813FED1D3628D300BD35E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8813FEC1D3628D300BD35E7 /* AppDelegate.m */; };
 		D88140031D3628D300BD35E7 /* QCMiaoBoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D88140021D3628D300BD35E7 /* QCMiaoBoTests.m */; };
@@ -66,9 +65,9 @@
 		31B19D24ED1F868659A64181 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC8BBD6D901FA70D4BA0DF4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A0023310D7E8A68C0539B817 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D829196B1D3F88F700E5A935 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		D82B19B91D3E05FF00BD9652 /* UITabBarController+ShowHideBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+ShowHideBar.h"; sourceTree = "<group>"; };
 		D82B19BA1D3E05FF00BD9652 /* UITabBarController+ShowHideBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+ShowHideBar.m"; sourceTree = "<group>"; };
-		D82B19BC1D3E08AE00BD9652 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		D82B19C11D3E135100BD9652 /* QCNewAnchorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCNewAnchorCell.h; sourceTree = "<group>"; };
 		D82B19C21D3E135100BD9652 /* QCNewAnchorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCNewAnchorCell.m; sourceTree = "<group>"; };
 		D83CA99D1D363F50000E718D /* QCAnchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCAnchor.h; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 		D86AB0281D372E8500124DC9 /* QCWatchLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCWatchLiveViewController.m; sourceTree = "<group>"; };
 		D86AB02A1D372E9300124DC9 /* QCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCViewController.h; sourceTree = "<group>"; };
 		D86AB02B1D372E9300124DC9 /* QCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCViewController.m; sourceTree = "<group>"; };
-		D86AB02D1D372EFD00124DC9 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		D8813FE51D3628D300BD35E7 /* QCMiaoBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QCMiaoBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8813FE91D3628D300BD35E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D8813FEB1D3628D300BD35E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -147,9 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D82B19BD1D3E08AE00BD9652 /* Reveal.framework in Frameworks */,
+				D829196C1D3F88F700E5A935 /* IJKMediaFramework.framework in Frameworks */,
 				27264138B3BB5F7E861DD3F9 /* libPods.a in Frameworks */,
-				D86AB02E1D372EFD00124DC9 /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +170,7 @@
 		AD7EF02C2C7B4D28A75B399A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D86AB02D1D372EFD00124DC9 /* IJKMediaFramework.framework */,
+				D829196B1D3F88F700E5A935 /* IJKMediaFramework.framework */,
 				31B19D24ED1F868659A64181 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -182,7 +179,6 @@
 		D8813FDC1D3628D300BD35E7 = {
 			isa = PBXGroup;
 			children = (
-				D82B19BC1D3E08AE00BD9652 /* Reveal.framework */,
 				D8813FE71D3628D300BD35E7 /* QCMiaoBo */,
 				D88140011D3628D300BD35E7 /* QCMiaoBoTests */,
 				D881400C1D3628D300BD35E7 /* QCMiaoBoUITests */,

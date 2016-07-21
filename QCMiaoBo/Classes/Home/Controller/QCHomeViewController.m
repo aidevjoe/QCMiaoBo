@@ -36,21 +36,6 @@
     return _childVc;
 }
 
-- (UIScrollView *)scrollView{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        _scrollView.contentSize = CGSizeMake(ScreenWidth * self.childVc.count, 0);
-        _scrollView.pagingEnabled = YES;
-        _scrollView.bounces = NO;
-        _scrollView.showsVerticalScrollIndicator = NO;
-        _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.delegate = self;
-        _scrollView.scrollsToTop = NO;
-        [self.view addSubview:_scrollView];
-    }
-    return _scrollView;
-}
-
 - (QCSliderView *)sliderView{
     if (!_sliderView) {
         _sliderView = [QCSliderView sliderViewWithTitles:@[@"热门", @"最新", @"关注"]];
@@ -59,6 +44,19 @@
 }
 
 #pragma mark - life cycle...
+
+- (void)loadView{
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    scrollView.contentSize = CGSizeMake(ScreenWidth * self.childVc.count, 0);
+    scrollView.pagingEnabled = YES;
+    scrollView.bounces = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.delegate = self;
+    scrollView.scrollsToTop = NO;
+    self.scrollView = scrollView;
+    self.view = self.scrollView;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
