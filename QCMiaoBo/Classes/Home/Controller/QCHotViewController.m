@@ -194,6 +194,12 @@
     [self presentViewController:wlVC animated:YES completion:nil];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.anchorData.count - 1) {
+        [self getLiveData];
+    }
+}
+
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 //    CGFloat offsetY = scrollView.contentOffset.y;
 //    if (offsetY > 0) {

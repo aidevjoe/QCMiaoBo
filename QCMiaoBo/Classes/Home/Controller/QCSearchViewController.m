@@ -52,13 +52,17 @@
 #pragma mark - custom action
 
 - (void)setupNavigationItem{
-    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth - 65, 28)];
-    self.searchBar.placeholder = @"搜索用户名或IDX";
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
+    self.navigationItem.leftBarButtonItem = ({
+        self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth - 65, 28)];
+        self.searchBar.placeholder = @"搜索用户名或IDX";
+        [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
+    });
     
-    UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClick)];
-    [cancelBtn setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = cancelBtn;
+    self.navigationItem.rightBarButtonItem = ({
+        UIBarButtonItem *cancelBtn = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelClick)];
+        [cancelBtn setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
+        cancelBtn;
+    });
 }
 
 - (void)cancelClick{
